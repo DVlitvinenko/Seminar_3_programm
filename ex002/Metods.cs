@@ -6,6 +6,7 @@ public static int []CreateArray (int size)
 {
   return new int[size];
 }
+
 // 2. Заполнение массива
 
 public static void FillArray (int []NameArray)
@@ -14,16 +15,26 @@ public static void FillArray (int []NameArray)
   int length = NameArray.Length;
   while (index < length)
   {
-    NameArray[index] = Input("Введите число номер " + index + ":");
+    NameArray[index] = Rundom(-5000000, 500000);
     index++;
   }
 }
-// 3. Ввод данный
+// 3. Ввод данных
 
 public static int Input (string text)
 {
   Console.Write(text + " ");
   return Convert.ToInt32(Console.ReadLine());;
+}
+
+
+// 3.2 ввод данных рандомно
+
+public static int Rundom (int min, int max)
+{
+  int result = 0;
+  result = new Random().Next(min, max);
+  return result;
 }
 
 // 4. перемешивание массива
@@ -109,7 +120,7 @@ public static void Enumepatian (int[] array)
     if (ProvNaPovtor(array, index) == 0)
     {
     Console.Write(array[index] + " ");
-    Console.WriteLine("- " + FindNumber(array, array[index])+ "р");
+    Console.Write("- " + FindNumber(array, array[index])+ "р, ");
     }
     index++;
   }
