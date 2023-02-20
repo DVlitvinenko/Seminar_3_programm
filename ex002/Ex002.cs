@@ -10,7 +10,6 @@ public class Ex002
   FillArray(array);
   WriteArray(array);
   Console.WriteLine();
-  Console.WriteLine();
   Enumepatian(array);
   }
 }

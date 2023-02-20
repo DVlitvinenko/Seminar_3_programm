@@ -1,3 +1,4 @@
+
 public class Metods
 {
   // 1. Создание массива
@@ -119,13 +120,28 @@ public static void Enumepatian (int[] array)
   { 
     if (ProvNaPovtor(array, index) == 0)
     {
-    Console.Write(array[index] + " ");
-    Console.Write("- " + FindNumber(array, array[index])+ "р, ");
+    Console.Write(array[index] + "");
+    Console.Write("-" + FindNumber(array, array[index])+",");
     }
     index++;
   }
 }
+public static string Enumepatian1 (int[] array)
+{
+  string text = String.Empty;
+  int index = 0;
+  while (index < array.Length)
+  { 
+    if (ProvNaPovtor(array, index) == 0)
+    {
+    text = "-" + FindNumber(array, array[index])+",";
+    }
+    index++;
+  }
+  return text;
+}
 }
 
+ 
 
-
+ 

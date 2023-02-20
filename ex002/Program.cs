@@ -1,7 +1,4 @@
-﻿using static Ex002;
+﻿
+using static Ex002;
 
-
-//перебор массива 
 Ex002_test();
-
-
