@@ -1,4 +1,4 @@
-
+using System.Text;
 public class Metods
 {
   // 1. Создание массива
@@ -87,18 +87,47 @@ public static int ProvNaPovtor(int []array, int numb)
 
 //перебор массива со счетом колличества повторяющихся элементов
 
-public static void Enumepatian (int[] array)
+public static void Enumepatian (int[] array, string fileName)
 {
+  StringBuilder text = new();
   int index = 0;
   while (index < array.Length)
   { 
     if (ProvNaPovtor(array, index) == 0)
     {
-    Console.Write(array[index] + "");
-    Console.Write("-" + FindNumber(array, array[index])+",");
+    text.Append(array[index] + "  " + FindNumber(array, array[index])+"р" + "\n");
     }
     index++;
   }
+  File.WriteAllText(fileName, text.ToString());
+  Console.WriteLine("Запись в файл " + fileName + " успешно завершена.");
+}
+
+// Вывод массива в строку stringBuilder
+
+public static void WriteArrayInStringBuilder (int []NameArray)
+{
+    StringBuilder text = new();
+    int index = 0;
+    while (index < NameArray.Length)
+    {
+      text.Append(NameArray[index] + " ");
+      index++;
+    }
+  System.Console.WriteLine(text);
+}
+
+// запись массива в файл
+
+public static void ArrayToFile(string fileName, int []NameArray)
+{
+  StringBuilder text = new();
+  for(int i = 0; i < NameArray.Length; i++)
+  {
+    text.Append(NameArray[i] + " ");
+  }
+  File.WriteAllText(fileName, text.ToString());
+  Console.WriteLine("Запись в файл " + fileName + " успешно завершена.");
 }
 }
 
