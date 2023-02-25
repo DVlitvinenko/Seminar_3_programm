@@ -16,7 +16,7 @@ public static void FillArray (int []NameArray)
   int length = NameArray.Length;
   while (index < length)
   {
-    NameArray[index] = Rundom(-5000000, 500000);
+    NameArray[index] = Rundom(-500000, 500000);
     index++;
   }
 }
@@ -38,25 +38,9 @@ public static int Rundom (int min, int max)
   return result;
 }
 
-// 4. перемешивание массива
 
-public static void MixArray (int[] NameArray)
-{
-  int index = 0;
-  int temp = 0;
-  int MixIndex = 0;
-  int length = NameArray.Length;
-  while (index < length-index)
-  {
-    MixIndex = new Random().Next(index+1, length);
-    temp = NameArray[index];
-    NameArray[index] = NameArray[MixIndex];
-    NameArray[MixIndex] = temp;
-    index++;
-  }
-}
 
-// 5. Вывод массива
+//  Вывод массива
 
 public static void WriteArray (int []NameArray)
 {
@@ -69,16 +53,6 @@ public static void WriteArray (int []NameArray)
   }
 }
 
-
-//Сравнение числа
-
-public static int CompNumber (int num1, int num2)
-{
-  if(num1 == num2)
-  return 1;
-  else
-  return 0;
-}
 
 //нахождение числа
 
@@ -125,20 +99,6 @@ public static void Enumepatian (int[] array)
     }
     index++;
   }
-}
-public static string Enumepatian1 (int[] array)
-{
-  string text = String.Empty;
-  int index = 0;
-  while (index < array.Length)
-  { 
-    if (ProvNaPovtor(array, index) == 0)
-    {
-    text = "-" + FindNumber(array, array[index])+",";
-    }
-    index++;
-  }
-  return text;
 }
 }
 
